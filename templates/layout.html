@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+    
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <link href="/static/styles.css" rel="stylesheet">
+
+        <title></title>
+
+    </head>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+    <!--<form action="/test" method="post">-->
+    <!--    <button type="submit"> test </button>-->
+    <!--</form>-->
+    <form action="/logout" method="post">
+        <button class="logout">logout</button>
+    </form>
+
+    <body>
+        <a style="text-decoration:none" href="/home"><h1>2022 Habit Tracker</h1></a>
+
+        <div class="month">
+            <form action="/new_month" method="post">
+                {% if month_num != 1%}
+                <button name="new_month" value="backtrack" type="submit"> < </button>
+                {% endif %}
+                <p>{{ month_name }}</p>
+                <input type="hidden" name="month_num" value="{{ month_num }}">
+                {% if month_num != 12%}
+                <button name="new_month" value="forward" type="submit"> > </button>
+                {% endif %}
+            </form>
+        </div>
+
+        <div class="row-main">
+            {% for habit in habits %}
+            {% set hid = habit["id"] %}
+            <div class="habits">
+                <table>
+                <thead>
+                    <tr>
+                        <th colspan=7> {{ habit["name"] }} </th>
+                    </tr>
+                    <tr>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    {% for day in week1 %}
+                        {% set x = day["id"] ~ hid %}
+                        {% if x in tracks %}
+                        <form action="/un_track" method="post">
+                            <td><button class="on" type='submit' value='{{ day["day"] }}'> {{ day["day"] }}</button></td>
+                            <input type="hidden" name="h_id" value='{{ hid }}'>
+                            <input type="hidden" name="d_id" value='{{ day["id"] }}'>
+                        </form>
+                        {% elif day["day"] != "" %}
+                        <form action="track" method="post">
+                            <td><button type='submit' value='{{ day["day"] }}'>{{ day["day"] }}</button></td>
+                            <input type="hidden" name="h_id" value='{{ hid }}'>
+                            <input type="hidden" name="d_id" value='{{ day["id"] }}'>
+                        </form>
+                        {% else %}
+                            <td>{{ day["day"] }}</td>
+                        {% endif %}
+                    {% endfor %}
+                    </tr>
+                    <tr>
+                    {% for day in week2 %}
+                        {% set x = day["id"] ~ hid %}
+                        {% if x in tracks %}
+                        <form action="/un_track" method="post">
+                            <td><button class="on" type='submit' value='{{ day["day"] }}'> {{ day["day"] }}</button></td>
+                            <input type="hidden" name="h_id" value='{{ hid }}'>
+                            <input type="hidden" name="d_id" value='{{ day["id"] }}'>
+                        </form>
+                        {% else %}
+                        <form action="track" method="post"> 
+                            <td><button type='submit' value='{{ day["day"] }}'>{{ day["day"] }}</button></td>
+                            <input type="hidden" name="h_id" value='{{ hid }}'>
+                            <input type="hidden" name="d_id" value='{{ day["id"] }}'>
+                        </form>
+                        {% endif %}
+                    {% endfor %}
+                    </tr>
+                    <tr>
+                    {% for day in week3 %}
+                        {% set x = day["id"] ~ hid %}
+                        {% if x in tracks %}
+                        <form action="/un_track" method="post">
+                            <td><button class="on" type='submit' value='{{ day["day"] }}'> {{ day["day"] }}</button></td>
+                            <input type="hidden" name="h_id" value='{{ hid }}'>
+                            <input type="hidden" name="d_id" value='{{ day["id"] }}'>
+                        </form>
+                        {% else %}
+                        <form action="track" method="post">
+                            <td><button type='submit' value='{{ day["day"] }}'>{{ day["day"] }}</button></td>
+                            <input type="hidden" name="h_id" value='{{ hid }}'>
+                            <input type="hidden" name="d_id" value='{{ day["id"] }}'>
+                        </form>
+                        {% endif %}
+                    {% endfor %}
+                    </tr>
+                    <tr>
+                    {% for day in week4 %}
+                        {% set x = day["id"] ~ hid %}
+                        {% if x in tracks %}
+                        <form action="/un_track" method="post">
+                            <td><button class="on" type='submit' value='{{ day["day"] }}'> {{ day["day"] }}</button></td>
+                            <input type="hidden" name="h_id" value='{{ hid }}'>
+                            <input type="hidden" name="d_id" value='{{ day["id"] }}'>
+                        </form>
+                        {% else %}
+                        <form action="track" method="post">
+                            <td><button type='submit' value='{{ day["day"] }}'>{{ day["day"] }}</button></td>
+                            <input type="hidden" name="h_id" value='{{ hid }}'>
+                            <input type="hidden" name="d_id" value='{{ day["id"] }}'>
+                        </form>
+                        {% endif %}
+                    {% endfor %}
+                    </tr>
+                    <tr>
+                    {% for day in week5 %}
+                        {% set x = day["id"] ~ hid %}
+                        {% if x in tracks %}
+                        <form action="/un_track" method="post">
+                            <td><button class="on" type='submit' value='{{ day["day"] }}'> {{ day["day"] }}</button></td>
+                            <input type="hidden" name="h_id" value='{{ hid }}'>
+                            <input type="hidden" name="d_id" value='{{ day["id"] }}'>
+                        </form>
+                        {% else %}
+                        <form action="track" method="post">
+                            <td><button type='submit' value='{{ day["day"] }}'>{{ day["day"] }}</button></td>
+                            <input type="hidden" name="h_id" value='{{ hid }}'>
+                            <input type="hidden" name="d_id" value='{{ day["id"] }}'>
+                        </form>
+                        {% endif %}
+                    {% endfor %}
+                    </tr>
+                    <tr>
+                    {% for day in week6 %}
+                        {% set x = day["id"] ~ hid %}
+                        {% if x in tracks %}
+                        <form action="/un_track" method="post">
+                            <td><button class="on" type='submit' value='{{ day["day"] }}'> {{ day["day"] }}</button></td>
+                            <input type="hidden" name="h_id" value='{{ hid }}'>
+                            <input type="hidden" name="d_id" value='{{ day["id"] }}'>
+                        </form>
+                        {%  elif day["day"] != "" %}
+                        <form action="track" method="post">
+                            <td><button type='submit' value='{{ day["day"] }}'>{{ day["day"] }}</button></td>
+                            <input type="hidden" name="h_id" value='{{ hid }}'>
+                            <input type="hidden" name="d_id" value='{{ day["id"] }}'>
+                        </form>
+                        {% else %}
+                            <td>{{ day["day"] }}</td>
+                        {% endif %}
+                    {% endfor %}
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+            {% endfor %}
+        </div>
+
+        <form action="/habit_track" method="POST">
+            <div class ="new_habit">
+                <input required autocomplete="off" class="form-control mx-auto w-auto" name="habit" placeholder="New Habit" type="text">
+                <button type="submit">Track Additional Habit</button>
+            </div>
+        </form>
+
+        <form action="/habit_remove" method="POST">
+            <div class ="remove_habit">
+                <select name ="removal">
+                    <option disabled selected value="">Select</option>
+                    {% for habit in habits %}
+                        <option value="{{ habit["name"] }}">{{ habit["name"] }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit">REMOVE Habit</button>
+            </div>
+        </form>
+
+    </body>
+
+</html>

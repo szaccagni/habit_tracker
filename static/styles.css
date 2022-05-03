@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Kalam:wght@700&family=Pacifico&family=Permanent+Marker&display=swap');
+
+body {
+    background-image: URL("https://images.unsplash.com/photo-1623551729703-27dde0ab431d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+    padding-top: 3em;
+    padding-left: 10em;
+    padding-right:9em;
+    color: #5fce3f; 
+}
+
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    color: #5fce3f;
+    font-size: 70px;
+    margin:0;
+    padding:0;
+}
+
+.month {
+    color: #191970;
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    padding:0;
+}
+
+.month form {
+    display:inline-block;
+    text-decoration: none;
+    color: #191970;
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+}
+
+.month button {
+    display:inline-block;
+    text-decoration: none;
+    color: #191970;
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    background-color: transparent;   
+    border: none;
+}
+
+.month button:hover:not([disabled]) {
+    color:#5fce3f;
+    cursor:pointer;
+}
+
+.month p {
+    display:inline-block;
+}
+
+.row-main {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left:-5px;
+    margin-right:0;
+}
+
+.habits {
+    /*flex: 32.5%;*/
+    /*max-width: 27%;*/
+    padding-top: 25px;
+    padding: 7px;
+    position:relative;
+}
+
+.habits table {
+    background: white;
+    color: black;
+    opacity: 0.65;
+    padding:5px;
+    border-collapse:separate;
+    border:solid black 1px;
+    border-radius:6px;
+}
+
+.habits thead { 
+    text-align:center;
+    background: white;
+}
+
+.habits thead th { 
+    padding:6px;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 16px;
+}
+
+.habits tbody td {
+    text-align:center;
+    background: white;
+}
+
+.habits td:first-child, th:first-child {
+     border-left: none;
+}
+
+.habits button:not(.on) {
+    display:inline-block;
+    text-decoration: none;
+    background-color: transparent;   
+    border: none;
+    border-radius:12px;
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-size: 14px;
+
+}
+
+.habits button:hover:not(.on) {
+    background-color:#5fce3f;
+    cursor:pointer;
+}
+
+.on {
+    background-color:#5fce3f;
+    display:inline-block;
+    text-decoration: none;
+    border: none;
+    border-radius:12px;
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-size: 14px;
+
+}
+
+.on:hover {
+    background-color:transparent;
+    cursor:pointer;
+}
+
+.new_habit {
+    padding-top: 25px;
+}
+
+.new_habit button {
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+    font-size: .8rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.form-control {
+    padding: 0.1rem 0.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.logout {
+    background-color: transparent;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding:7px;
+    cursor:pointer;
+    float: right;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+      <meta name="generator" content="Hugo 0.88.1">
+      <title>Signin</title>
+
+      <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
+
+      <link href="/static/signin.css" rel="stylesheet">    
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+      <!-- Custom styles for this template -->
+      <link href="signin.css" rel="stylesheet">
+    </head>
+    
+    <body>
+    	<main class="form-signin">
+	        <div class="title">
+                <p>2022 Habit Tracker</p>
+            </div>
+	    	<div class="mxwdth">
+	    	<form action="/register" method="post">
+				<div class="form-floating">
+	        		<input type="text" class="form-control" name="username" placeholder="Username">
+	        	</div>
+	        	<div class="form-floating" style="margin-top:10px">
+	          		<input type="password" class="form-control" name="pw" placeholder="Password">
+	        	</div>
+	        	<div class="form-floating" style="margin-top:10px">
+	          		<input type="password" class="form-control" name="confirm" placeholder="Password (again)">
+	        	</div>
+	    		
+                <button class="mybtn" type="submit">Register</button>
+                {% if errors %}
+                    {% for error in errors %}
+                        <p style="color:red"><strong>Error:</strong> {{ error }}
+                    {% endfor %}
+                {% endif %}
+	    	</form>
+	    	</div>
+    	</main>
+    </body>
+	
+</html>
