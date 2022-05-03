@@ -139,19 +139,55 @@ h1 {
 }
 
 .new_habit button {
-    background-color: #ddd;
+    background-color: rgb(138, 188, 131);
     border: none;
     color: black;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    margin: 4px 2px;
+    margin: 6px;
     cursor: pointer;
     border-radius: 16px;
     font-size: .8rem;
     font-weight: 400;
     line-height: 1.5;
+}
+
+.new_habit button:hover{
+    background-color: rgb(57, 87, 49);
+    color:white;
+}
+.remove_habit {
+    padding-top: 10px;
+}
+.remove_habit button {
+    background-color: rgb(198, 193, 193);
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 6px;
+    cursor: pointer;
+    border-radius: 16px;
+    font-size: .8rem;
+    font-weight: 400;
+}
+
+.remove_habit button:hover {
+    background-color: rgb(143, 139, 139);
+    color:white;
+}
+
+.remove_habit select {
+    padding: 0.1rem 0.5rem;
+    color: grey;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 .form-control {

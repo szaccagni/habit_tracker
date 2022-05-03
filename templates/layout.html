@@ -188,7 +188,7 @@
                 <select name ="removal">
                     <option disabled selected value="">Select</option>
                     {% for habit in habits %}
-                        <option value="{{ habit["name"] }}">{{ habit["name"] }}</option>
+                        <option value='{{ habit["name"] }}'>{{ habit["name"] }}</option>
                     {% endfor %}
                 </select>
                 <button type="submit">REMOVE Habit</button>
